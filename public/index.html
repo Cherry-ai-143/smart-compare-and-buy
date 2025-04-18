@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Compare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="dark-header">
+        <div class="header-left">
+            <div class="hamburger-menu">☰</div>
+        </div>
+        <div class="header-center">
+            <h1>Smart Compare</h1>
+        </div>
+        <div class="header-right">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search products...">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <button class="auth-btn">Login</button>
+            <button class="auth-btn">Signup</button>
+            <div class="dropdown-menu">
+                <button class="menu-btn">⋮</button>
+                <ul class="dropdown-content">
+                    <li><button class="dropdown-item">Set Location</button></li>
+                    <li><button class="dropdown-item">Rate Us</button></li>
+                    <li><button class="dropdown-item">Privacy Policy</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <ul class="menu">
+            <li class="menu-item">Cart</li>
+            <li class="has-submenu">
+                <div class="menu-item">Category</div>
+                <ul class="submenu">
+                    <li><button class="submenu-item">Dairy</button></li>
+                    <li><button class="submenu-item">Vegetable</button></li>
+                    <li><button class="submenu-item">Fruit</button></li>
+                    <li><button class="submenu-item">Bakery</button></li>
+                    <li><button class="submenu-item">Electrical</button></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <div class="menu-item">Stores</div>
+                <ul class="submenu">
+                    <li><button class="submenu-item">Blinkit</button></li>
+                    <li><button class="submenu-item">Zepto</button></li>
+                    <li><button class="submenu-item">Fresh to Home</button></li>
+                    <li><button class="submenu-item">Bigbasket</button></li>
+                </ul>
+            </li>
+            <li class="menu-item">Contact Us</li>
+        </ul>
+    </aside>
+
+    <section class="category-section">
+        <div class="category-scroller-container">
+            <button class="scroll-arrow left-arrow" aria-label="Scroll left">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            <div class="category-scroller">
+            <div class="category-card" data-category="fruits">
+                <img src="images/fv.jpg" alt="Fruits">
+                <span>Fruits & Vegetables</span>
+            </div>
+            <div class="category-card" data-category="Dairy Products">
+                <img src="images/dairy.jpg" alt="Dairy Products">
+                <span>Dairy Products </span>
+            </div>
+            <div class="category-card" data-category="dry fruits">
+                <img src="images/dryfrits.jpg" alt="dryfruits">
+                <span>Dry Fruits</span>
+            </div>
+            <div class="category-card" data-category="ice creams ">
+                <img src="images/ice cream.jpg" alt="ice creams">
+                <span>Ice Creams</span>
+            </div>
+            <div class="category-card" data-category="atta,oil,rice">
+                <img src="images/ardo.png" alt="Dairy">
+                <span>Atta,Oil,Rice & Dals </span>
+            </div>
+            <div class="category-card" data-category="meat">
+                <img src="images/meat fish.jpeg" alt="Meat">
+                <span>Meat & Fish</span>
+            </div>
+            <div class="category-card" data-category="Electrical">
+                <img src="images/electrical.jpg" alt="Electrical">
+                <span>Electrical Items</span>
+            </div>
+            <div class="category-card" data-category="Toys">
+                <img src="images/toys.avif" alt="Toys">
+                <span>Toys</span>
+            </div>
+            <div class="category-card" data-category="snacks">
+                <img src="images/snacks.jpg" alt="snacks">
+                <span>Snacks</span>
+            </div>
+            <div class="category-card" data-category="C&D">
+                <img src="images/cold drinks.jpeg" alt="C&D">
+                <span>Cold Drinks</span>
+            </div>
+            <div class="category-card" data-category="body & soap">
+                <img src="images/body and soap.jpeg" alt="body & soap">
+                <span>Body & Soap</span>
+            </div>
+            <div class="category-card" data-category="Hair care">
+                <img src="images/hair care.jpeg" alt="Hair Care">
+                <span>Hair Care</span>
+            </div>
+            <div class="category-card" data-category="cleannig">
+                <img src="images/cleaning essentials.jpg" alt="cleaning">
+                <span>Cleaning Essentials</span>
+            </div>
+            </div>
+            <button class="scroll-arrow right-arrow" aria-label="Scroll right">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Advertisement Banner Carousel -->
+    <div class="banner-container w-[1270.4px] h-[233.24px] relative overflow-hidden mx-auto my-8">
+      <div class="banner-slides flex transition-all duration-500 ease-in-out">
+        <div class="min-w-full">
+          <img src="images/fv.jpg" alt="Fruits & Vegetables" class="w-full h-full object-cover">
+        </div>
+        <div class="min-w-full">
+          <img src="images/dairy.jpg" alt="Dairy Products" class="w-full h-full object-cover">
+        </div>
+        <div class="min-w-full">
+          <img src="images/dryfrits.jpg" alt="Dry Fruits" class="w-full h-full object-cover">
+        </div>
+        <div class="min-w-full">
+          <img src="images/ice cream.jpg" alt="Ice Creams" class="w-full h-full object-cover">
+        </div>
+      </div>
+      <div class="banner-indicators absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 indicator-btn" data-slide="0"></button>
+        <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 indicator-btn" data-slide="1"></button>
+        <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 indicator-btn" data-slide="2"></button>
+        <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 indicator-btn" data-slide="3"></button>
+      </div>
+    </div>
+
+    <main class="product-grid-container">
+        <div class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/fv.jpg" alt="Product 1">
+                    <span class="discount-badge">20% OFF</span>
+                </div>
+                <h3 class="product-name">Fresh Apples</h3>
+                <p class="product-weight">1 kg</p>
+                <div class="price-container">
+                    <span class="original-price">₹120</span>
+                    <span class="discounted-price">₹96</span>
+                </div>
+                <button class="add-to-cart">Start Comparing</button>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/dairy.jpg" alt="Product 2">
+                    <span class="discount-badge">15% OFF</span>
+                </div>
+                <h3 class="product-name">Organic Milk</h3>
+                <p class="product-weight">1 Liter</p>
+                <div class="price-container">
+                    <span class="original-price">₹80</span>
+                    <span class="discounted-price">₹68</span>
+                </div>
+                <button class="add-to-cart">Start Comparing</button>
+            </div>
+
+            <!-- Add more product cards as needed -->
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button class="submit-btn">Login</button>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+            <button class="submit-btn">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="sticky-footer">
+        © 2025 Smart Compare. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
