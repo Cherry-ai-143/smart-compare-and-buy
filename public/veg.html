@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vegetables - Smart Compare</title>
+  <link rel="stylesheet" href="category.css" />
+</head>
+<body>
+  <header class="dark-header">
+    <div class="header-left">
+      <div class="hamburger-menu">☰</div>
+    </div>
+    <div class="header-center">
+      <h1>Smart Compare - Vegetables</h1>
+    </div>
+    <div class="header-right">
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search Vegetables" />
+        <button class="search-btn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <main class="main-content">
+    <h2 class="category-title">Vegetables</h2>
+    <div class="product-grid" id="productGrid">
+      <!-- Products will be dynamically loaded here -->
+    </div>
+  </main>
+
+  <script>
+    async function fetchCategoryProducts() {
+      try {
+        const response = await fetch('/api/products/vegetables');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const products = await response.json();
+        const productGrid = document.getElementById('productGrid');
+        productGrid.innerHTML = '';
+
+        products.forEach(product => {
+          const productCard = document.createElement('div');
+          productCard.className = 'product-card';
+
+          const productImage = document.createElement('div');
+          productImage.className = 'product-image';
+
+          const img = document.createElement('img');
+          img.src = product.imageUrl || 'images/vegetables.jpg';
+          img.alt = product.name;
+
+          const discountBadge = document.createElement('span');
+          discountBadge.className = 'discount-badge';
+          discountBadge.textContent = product.discountPercent ? `${product.discountPercent}% OFF` : '';
+
+          productImage.appendChild(img);
+          productImage.appendChild(discountBadge);
+
+          const productName = document.createElement('h3');
+          productName.className = 'product-name';
+          productName.textContent = product.name;
+
+          const productWeight = document.createElement('p');
+          productWeight.className = 'product-weight';
+          productWeight.textContent = product.weight;
+
+          const priceContainer = document.createElement('div');
+          priceContainer.className = 'price-container';
+
+          const originalPrice = document.createElement('span');
+          originalPrice.className = 'original-price';
+          originalPrice.textContent = `₹${product.originalPrice}`;
+
+          const discountedPrice = document.createElement('span');
+          discountedPrice.className = 'discounted-price';
+          discountedPrice.textContent = `₹${product.discountedPrice}`;
+
+          priceContainer.appendChild(originalPrice);
+          priceContainer.appendChild(discountedPrice);
+
+          const addToCartBtn = document.createElement('button');
+          addToCartBtn.className = 'add-to-cart';
+          addToCartBtn.textContent = 'Start Comparing';
+
+          productCard.appendChild(productImage);
+          productCard.appendChild(productName);
+          productCard.appendChild(productWeight);
+          productCard.appendChild(priceContainer);
+          productCard.appendChild(addToCartBtn);
+
+          productGrid.appendChild(productCard);
+        });
+      } catch (error) {
+        console.error('Failed to fetch category products:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchCategoryProducts);
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
